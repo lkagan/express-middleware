@@ -6,4 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+// Global middleware
+router.use((req, res, next) => {
+  console.log('Runs on all requests to the API');
+  next();
+})
+
 module.exports = router;
