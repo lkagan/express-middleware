@@ -12,4 +12,10 @@ router.use((req, res, next) => {
   next();
 })
 
+// Route-specific middleware
+router.use('/test$', (req, res, next) => {
+  console.log('Runs only at /test');
+  next();
+})
+
 module.exports = router;
